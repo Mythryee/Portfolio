@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Apple Chancery', cursive;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.navbar {
+    background-color: #000000;
+    box-shadow: 0 0 12px 3px #00FF7F;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+}
+
+.logo a {
+    font-size: 20px;
+    color: #00FF7F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    font-weight: bold;
+    color: #00FF7F;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: #00FF7F;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-toggle:active {
+    transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000000;
+        box-shadow: 0 0 12px 3px #00FF7F;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        gap: 15px;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: max-height 0.8s ease, opacity 0.8s ease;
+    }
+
+    .nav-links.active {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+}
+
+
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    color: #00FF7F;
+    font-family: 'Apple Chancery', cursive;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('6323.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000;
+    z-index: -1;
+    opacity: 1;
+}
+
+.home-content {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    z-index: 1;
+}
+
+.home h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.home h1 span {
+    color: #00FF7F;
+    font-weight: bold;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #00FF7F, 0 0 10px #00FF7F;
+    }
+    100% {
+        text-shadow: 0 0 20px #00FF7F, 0 0 30px #00FF7F;
+    }
+}
+
+.home h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #00FF7F;
+}
+
+.home p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.contact-info a {
+    color: #00FF7F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 28px;
+    }
+
+    .home h2 {
+        font-size: 18px;
+    }
+
+    .home p,
+    .contact-info {
+        font-size: 14px;
+    }
+}
+
+
+.skills-section {
+    padding: 60px 20px;
+    background-color: #000;
+    color: #00FF7F;
+    font-family: 'Apple Chancery', cursive;
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: rgba(0, 255, 127, 0.08);
+    border: 2px solid #00FF7F;
+    border-radius: 12px;
+    padding: 20px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+}
+
+.skill-card h3 {
+    color: #00FF7F;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Apple Chancery', cursive;
+}
+
+.skill-card p {
+    font-size: 15px;
+    color: #e0ffe0;
+    line-height: 1.6;
+}
+
+.skill-card:hover {
+    background-color: #00FF7F;
+    color: #000;
+    transform: scale(1.05);
+}
+
+.skill-card:hover h3,
+.skill-card:hover p {
+    color: #000;
+}
+
+@media (min-width: 768px) {
+    .skill-card {
+        flex: 0 0 calc(50% - 25px);
+        max-width: calc(50% - 25px);
+    }
+
+    .skills-title {
+        font-size: 30px;
+    }
+
+    .skill-card h3 {
+        font-size: 18px;
+    }
+
+    .skill-card p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) {
+    .skill-card {
+        flex: 0 0 calc(33.33% - 25px);
+        max-width: calc(33.33% - 25px);
+    }
+
+    .skills-title {
+        font-size: 36px;
+    }
+
+    .skill-card h3 {
+        font-size: 20px;
+    }
+
+    .skill-card p {
+        font-size: 15px;
+    }
+}
+
+
+.projects-section {
+    padding: 60px 20px;
+    background-color: #000;
+    color: #00FF7F;
+    font-family: 'Apple Chancery', cursive;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.project-description {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e0ffe0;
+    font-family: Arial, sans-serif;
+}
+
+.github-button {
+    margin-top: 20px;
+}
+
+.view-github {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #00FF7F;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.view-github:hover {
+    background-color: #00cc66;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .project-description {
+        font-size: 14px;
+    }
+
+    .view-github {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+
+
+
+
+.contact-section {
+    padding: 60px 20px;
+    background-color: #000;
+    color: #00FF7F;
+    font-family: 'Apple Chancery', cursive;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group input {
+    flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 2px solid #00FF7F;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.contact-form button {
+    background-color: #00FF7F;
+    color: #000;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #00cc66;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+    }
+
+    .contact-title {
+        font-size: 28px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+.site-footer {
+  background-color: #000;
+  color: #00FF7F;
+  text-align: center;
+  padding: 15px 10px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 12px;
+    padding: 10px 5px;
+  }
+}
