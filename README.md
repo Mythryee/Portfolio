@@ -117,5 +117,5 @@ To send emails via Gmail SMTP in PHPMailer:
 - Generate an **App Password** (16-character code) in Google Account Security settings.
 - Use this App Password as the SMTP password in your PHP script.
 
-This ensures secure and reliable email sending without exposing your main Gmail password. does anything look weird or it is done by ai 
+This ensures secure and reliable email sending without exposing your main Gmail password.
 
